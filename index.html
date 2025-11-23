@@ -31,6 +31,7 @@
     <script src="./js/timer.js" defer></script>
     <script src="./js/form.js" defer></script>
     <script src="./js/nav.js" defer></script>
+    <script src="./js/modalBook.js" defer></script>
   </head>
   <body>
     <!-- Навигация -->
@@ -190,17 +191,17 @@
             <div class="card book-card position-relative">
               <span class="age-badge">0-1 год</span>
               <img
-                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400"
-                alt="Книга 1"
+                src="./img/book0-1.jpg"
+                class="img-fluid"
+                alt="Книга 0-1"
+                style="object-fit: contain"
               />
-              <div class="card-body">
-                <h5 class="card-title">Первые слова</h5>
-                <p class="card-text">
-                  Яркие картинки и простые слова для самых маленьких
-                </p>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Трогательные истории. Транспорт</h5>
+                <p class="card-text">Развиваем тактильное восприятие малыша</p>
                 <button
-                  class="btn btn-sm btn-custom"
-                  onclick="showBookDetails('Первые слова')"
+                  class="btn btn-sm btn-custom mt-auto"
+                  onclick="showBookDetails('Трогательные истории')"
                 >
                   Подробнее
                 </button>
@@ -210,18 +211,15 @@
           <div class="col-md-4">
             <div class="card book-card position-relative">
               <span class="age-badge">1-2 года</span>
-              <img
-                src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400"
-                alt="Книга 2"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Веселые животные</h5>
+              <img src="./img/book1-2.jpeg" alt="Книга 1-2" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Кто где живёт</h5>
                 <p class="card-text">
-                  Интерактивная книга с звуками и тактильными элементами
+                  Красочные крупные картинки и интерактивность
                 </p>
                 <button
-                  class="btn btn-sm btn-custom"
-                  onclick="showBookDetails('Веселые животные')"
+                  class="btn btn-sm btn-custom mt-auto"
+                  onclick="showBookDetails('Кто где живёт')"
                 >
                   Подробнее
                 </button>
@@ -230,19 +228,20 @@
           </div>
           <div class="col-md-4">
             <div class="card book-card position-relative">
-              <span class="age-badge">2-4 года</span>
+              <span class="age-badge">2-3 года</span>
               <img
-                src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400"
-                alt="Книга 3"
+                src="./img/book2-3.webp"
+                alt="Книга 2-3"
+                style="object-fit: contain"
               />
-              <div class="card-body">
-                <h5 class="card-title">Сказки на ночь</h5>
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Сказки в картинках</h5>
                 <p class="card-text">
-                  Добрые истории для спокойного сна малыша
+                  Наиболее полный сборник сказок Владимира Сутеева
                 </p>
                 <button
-                  class="btn btn-sm btn-custom"
-                  onclick="showBookDetails('Сказки на ночь')"
+                  class="btn btn-sm btn-custom mt-auto"
+                  onclick="showBookDetails('Сказки в картинках')"
                 >
                   Подробнее
                 </button>
@@ -374,7 +373,7 @@
                 <h4 class="mb-4">Оставьте заявку</h4>
                 <form id="registrationForm">
                   <div class="mb-3">
-                    <label class="form-label">Ваше Ваш email</label>
+                    <label class="form-label">Ваше имя</label>
                     <input
                       type="text"
                       class="form-control"
@@ -447,13 +446,22 @@
                   >
                 </div>
                 <div class="d-flex gap-3 mt-4">
-                  <a href="#" class="btn btn-outline-primary btn-lg"
-                    ><i class="bi bi-facebook"></i
+                  <a
+                    href="https://wa.me/74951234567"
+                    target="_blank"
+                    class="btn btn-outline-primary btn-lg"
+                    ><i class="bi bi-whatsapp"></i
                   ></a>
-                  <a href="#" class="btn btn-outline-primary btn-lg"
-                    ><i class="bi bi-instagram"></i
+                  <a
+                    href="https://vkvideo.ru"
+                    target="_blank"
+                    class="btn btn-outline-primary btn-lg"
+                    ><i class="bi bi-youtube"></i
                   ></a>
-                  <a href="#" class="btn btn-outline-primary btn-lg"
+                  <a
+                    href="https://t.me/"
+                    target="_blank"
+                    class="btn btn-outline-primary btn-lg"
                     ><i class="bi bi-telegram"></i
                   ></a>
                 </div>
@@ -487,7 +495,7 @@
       </div>
     </footer>
 
-    <!-- Modal для деталей книги -->
+    <!-- Модальное окно книг -->
     <div class="modal fade" id="bookModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -499,9 +507,7 @@
               data-bs-dismiss="modal"
             ></button>
           </div>
-          <div class="modal-body" id="bookModalBody">
-            <!-- Контент загружается динамически -->
-          </div>
+          <div class="modal-body" id="bookModalBody"></div>
           <div class="modal-footer">
             <button
               type="button"
