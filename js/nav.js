@@ -1,4 +1,4 @@
-const scrollToSection = (sectionId) => {
+function scrollToSection(sectionId) {
   const element = document.getElementById(sectionId);
   element.scrollIntoView({ behavior: "smooth" });
 }
@@ -12,4 +12,3 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
-scrollToSection()
