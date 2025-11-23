@@ -26,7 +26,7 @@ body {
     rgba(70, 170, 219, 0.53) 0%,
     rgba(97, 25, 179, 0.53) 100%,
     rgba(177, 124, 242, 0.54) 67%,
-    rgba(181, 83, 237, 1) 97%
+    rgba(181, 83, 237, 1) 100%
   );
   color: white;
   padding: 100px 0 80px;
@@ -168,7 +168,7 @@ body {
 }
 
 .countdown-container {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(160deg, #f093fb 0%, #f5576c 100%);
   color: white;
   padding: 60px 0;
   margin: 0;
