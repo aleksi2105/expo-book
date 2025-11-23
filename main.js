@@ -1,26 +1,4 @@
 
-
-
-// Обратный отсчет до выставки
-
-
-// Плавная прокрутка к секциям
-function scrollToSection(sectionId) {
-  const element = document.getElementById(sectionId);
-  element.scrollIntoView({ behavior: "smooth" });
-}
-
-// Обработка навигации
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-});
-
 // Показать детали книги
 function showBookDetails(bookTitle) {
   const bookDetails = {
@@ -61,17 +39,6 @@ function showBookDetails(bookTitle) {
   const modal = new bootstrap.Modal(document.getElementById("bookModal"));
   modal.show();
 }
-
-// Обработка формы регистрации
-document
-  .getElementById("registrationForm")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert(
-      "Спасибо за регистрацию! Мы отправили подтверждение на ваш email."
-    );
-    this.reset();
-  });
 
 // Анимация при прокрутке
 const observerOptions = {
