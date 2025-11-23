@@ -1,6 +1,4 @@
 
-// Показать детали книги
-
 // Анимация при прокрутке
 const observerOptions = {
   threshold: 0.1,
